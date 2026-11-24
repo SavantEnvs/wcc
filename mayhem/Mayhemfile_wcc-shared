@@ -1,0 +1,10 @@
+project: savantenvs/wcc
+target: wcc-shared
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/wcc-shared/testsuite
+cmds:
+  # wcc default (shared) mode: libbfd loader, section/symbol rebuild, phdr + ELF writer
+  - cmd: /mayhem/mayhem/out/wcc -o out.so @@
+    afl: true
+    timeout: 10

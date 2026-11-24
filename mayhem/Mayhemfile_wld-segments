@@ -1,0 +1,10 @@
+project: savantenvs/wcc
+target: wld-segments
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/wld-segments/testsuite
+cmds:
+  # wld libify, segments mode + strip versions/no-init (process_segments64/32)
+  - cmd: /mayhem/mayhem/out/wld -l -S -s -n @@
+    afl: true
+    timeout: 10

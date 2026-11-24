@@ -1,0 +1,10 @@
+project: savantenvs/wcc
+target: wldd
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/wldd/testsuite
+cmds:
+  # wldd: DT_NEEDED listing via libelf
+  - cmd: /mayhem/mayhem/out/wldd @@
+    afl: true
+    timeout: 10

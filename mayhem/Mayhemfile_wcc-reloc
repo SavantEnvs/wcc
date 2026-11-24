@@ -1,0 +1,10 @@
+project: savantenvs/wcc
+target: wcc-reloc
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/wcc-reloc/testsuite
+cmds:
+  # wcc -c (relocatable) mode: + reloc parsing, capstone text analysis, data relocations
+  - cmd: /mayhem/mayhem/out/wcc -c -o out.o @@
+    afl: true
+    timeout: 10

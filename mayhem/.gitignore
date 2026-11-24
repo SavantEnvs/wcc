@@ -1,0 +1,2 @@
+# build.sh outputs (fuzz binaries, oracle build, test fixtures)
+out/

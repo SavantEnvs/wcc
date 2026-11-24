@@ -1,0 +1,10 @@
+project: savantenvs/wcc
+target: wld-sections
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/wld-sections/testsuite
+cmds:
+  # wld libify, sections mode (mk_lib -> process_sections64/32, fix_relocations_sections64)
+  - cmd: /mayhem/mayhem/out/wld -l @@
+    afl: true
+    timeout: 10
